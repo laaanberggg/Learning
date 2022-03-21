@@ -1,0 +1,43 @@
+﻿<Page x:Class="MurzaevIR.Prosmotr"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MurzaevIR"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Prosmotr" Background="#FFE7FABF">
+
+    <Grid>
+        <ListView Name="LVUslugi" Background="#FFE7FABF" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel HorizontalAlignment="Center"></WrapPanel>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate >
+                <DataTemplate>
+                    <Border Padding="5" CornerRadius="5" BorderThickness="5" Background="{Binding NewPrice}">
+                        <Grid Width="600" Height="100">
+                            <StackPanel Background="#FFE7FABF" Orientation="Horizontal" >
+                                <Image Source="{Binding MainImagePath}" Height="50" Width="100"/>
+                                <StackPanel Background="#FFE7FABF">
+                                    <TextBlock Style="{StaticResource TBlock}" Text="{Binding Title}"></TextBlock>
+                                    <TextBlock Style="{StaticResource TBlock}" TextDecorations="{Binding Sale}" Text="{Binding Cost}"></TextBlock>
+                                    <TextBlock Style="{StaticResource TBlock}" Text="{Binding ItogPrice}"></TextBlock>
+                                    <TextBlock Style="{StaticResource TBlock}" Text="{Binding Duration}"></TextBlock>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Button Style="{StaticResource Buttons}" Name="buttRed" Uid="{Binding ID}" Click="buttRed_Click">Редактировать</Button>
+                                        <Button Style="{StaticResource Buttons}" Name="buttDel" Uid="{Binding ID}" Click="buttDel_Click">Удалить</Button>
+                                    </StackPanel>
+                                    
+                                </StackPanel>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>
+

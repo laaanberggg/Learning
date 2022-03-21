@@ -1,0 +1,16 @@
+﻿<Window x:Class="MurzaevIR.Auth"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MurzaevIR"
+        mc:Ignorable="d"
+       Title="Auth" Height="150" Width="190">
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" Width="150">
+            <TextBlock Style="{StaticResource TBlock}" HorizontalAlignment="Center" Margin="0,0,0,5" >Пароль для входа</TextBlock>
+            <TextBox Style="{StaticResource TBox}" Name="TbPassword" Margin="0,0,0,5"/>
+            <Button Style="{StaticResource Buttons}" Name="buttVhod" Width="50" Click="buttVhod_Click">Войти</Button>
+        </StackPanel>
+    </Grid>
+</Window>
